@@ -1,4 +1,4 @@
-# Fizz Buzz: A JavaScript Program
+# FizzBuzz: A JavaScript Program
 
 A short program that displays each number from 1 to 100.
 * For each multiple of 3, "Fizz" is displayed instead of the number.
