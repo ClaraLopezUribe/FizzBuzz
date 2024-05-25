@@ -2,16 +2,34 @@
     --logo-primary-color: #C99383;
     --logo-secondary-color: #83B8C9;
     --logo-third-color:#b8c983;
+    --logo-dark: #232C33;
 
     /*App Specific Color Pallette*/
     --light: #fefefe;
-    --dark: #232C33;
+    --dark: #0F1814;
     --black-color: #000000;
-    --lightmode-primary: #128082;
-    --lightmode-accent: #ff5900ff;
-    --darkmode-accent: #1CCCCE;
-    --darkmode-primary: #e09f3e;
+    --lightmode-primary: #57722f;
+    --lightmode-secondary:#363c67;
+    --lightmode-accent: #720109;
+    --darkmode-accent: ;
+    --darkmode-primary: ;
+
+    --lightmode-large: #ed4103;
+
+    --striped-table: #f1f1f1;
+
+
+    /* FizzBuzz Palette */
+--fern-green: #57722Fff;
+--blood-red: #720109;
+--Night: #0F1814;
+
+
+
+
+
 }
+
 
 body{
     color: var(--dark);
@@ -19,13 +37,13 @@ body{
 }
 
 nav{
-    background-color: var(--black-color);
+    background-color: var(--logo-dark);
 }
 
 
 
 footer{
-    background-color: var(--black-color);
+    background-color: var(--logo-dark);
     padding: 1rem;
 }
 
@@ -46,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .subheading {
-    color: var(--lightmode-accent);
+    color: var(--lightmode-large);
 }
 
 main>.container{
@@ -65,7 +83,7 @@ main>.container{
 }
 
 .checklist >li i{
-    color: var(--lightmode-accent);    
+    color: var(--lightmode-large);    
 }
 
 .alert{
@@ -73,6 +91,24 @@ main>.container{
     background-color: var(--dark);
 }
 
+.Fizz {
+    color: var(--lightmode-primary);
+    font-weight: bold;
+    font-size: larger;
+}
+
+.Buzz {
+    color: var(--lightmode-secondary);
+    font-weight: bold;
+    font-size: larger;
+}
+
+.FizzBuzz {
+    color: var(--lightmode-accent);
+    font-weight: bold;
+    font-size: larger;
+
+}
 
 code[class*="language-"],
 pre[class*="language-"] {
