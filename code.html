@@ -64,10 +64,112 @@
         <div class="row row-cols-1 row-cols-lg-2 g-5 py-1">
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    //Call Hello World
-                    function helloWorld() {
-                        alert ("hello World");
-                    }
+                    /***** CONTROLLER function *****/
+
+function getValues() {
+
+    // Get the user input values for Fizz and Buzz
+    // NOTE: The value obtained from an input element is always a string, even if the input type is "number" as it is in ths case...
+    let fizzValue = document.getElementById("fizzValue").value;
+    let buzzValue = document.getElementById("buzzValue").value;
+
+   
+    
+    //...therefore, check for numbers by parsing (a technique used to analyze and interpret the syntax of a text or program to extract relevant information) the user input value. This method converts and returns an integer
+    fizzValue = parseInt(fizzValue);
+    buzzValue = parseInt(buzzValue);
+
+
+    // Validate that the values in the variables fizzValue and buzzValue are both integers (not decimals, strings or other Non-number values)
+    if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
+
+        // Call the LOGIC function, and assign it to a new variable
+        let fbArray = fizzBuzz(fizzValue, buzzValue);
+        //Call DISPLAY function
+        displayData(fbArray);
+        // OR display an error message
+    } else {
+
+        alert("Error: You must enter integers between 1 and 100");
+
+    }
+}
+
+/***** LOGIC function *****/
+
+function fizzBuzz(fizzValue, buzzValue) {
+    
+    // Initialize the array that will hold the value of the iterator after each loop
+    let returnArray = [];
+    
+
+    // Test each number to determine if it meets the conditions for "FizzBuzz", "Fizz", or "Buzz", and add the values to the array
+    for (let i = 1; i <=100; i++) {
+
+        if (i % fizzValue == 0 && i % buzzValue == 0) {
+
+            returnArray.push("FizzBuzz")
+
+
+        } else if (i % fizzValue == 0) {
+
+            returnArray.push("Fizz")
+
+
+        } else if (i % buzzValue == 0) {
+
+            returnArray.push("Buzz")
+
+        } else {
+
+            returnArray.push(i);      
+
+        }   
+
+    }
+
+    return returnArray;
+
+}
+
+/***** DISPLAY function *****/
+
+// Create a table to display the results of the fizzBuzz function
+function displayData(fbArray) {
+
+   // Get the table body element from the page
+   let tableBody = document.getElementById("results");
+
+   // Get the template element from the page
+   let templateRow = document.getElementById("fbTemplate");
+
+   // Clear the table first
+   tableBody.innerHTML = "";
+
+   for (let index = 0; index < fbArray.length; index += 5) {
+
+    // Make a copy/fragment of the template row with importNode
+    let tableRow = document.importNode(templateRow.content, true);
+
+    // Get just the td and put them into an array to check its length
+    let rowCols = tableRow.querySelectorAll("td");
+
+    rowCols[0].classList.add(fbArray[index]);
+    rowCols[0].textContent = fbArray[index];
+    rowCols[1].classList.add(fbArray[index+1]);
+    rowCols[1].textContent = fbArray[index+1];
+    rowCols[2].classList.add(fbArray[index+2]);
+    rowCols[2].textContent = fbArray[index+2];
+    rowCols[3].classList.add(fbArray[index+3]);
+    rowCols[3].textContent = fbArray[index+3];
+    rowCols[4].classList.add(fbArray[index+4]);
+    rowCols[4].textContent = fbArray[index+4];
+
+    tableBody.appendChild(tableRow);
+
+   }
+
+}
                 </code></pre>
             </div>
             <div class="col-lg-4 py-2">

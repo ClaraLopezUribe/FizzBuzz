@@ -2,33 +2,26 @@
 
 function getValues() {
 
-    //get value to test Fizz
-    //get value to test Buzz
-
+    // Get the user input values for Fizz and Buzz
+    // NOTE: The value obtained from an input element is always a string, even if the input type is "number" as it is in ths case...
     let fizzValue = document.getElementById("fizzValue").value;
     let buzzValue = document.getElementById("buzzValue").value;
 
    
-    //3. check that entered values are numbers
-    //4. check for numbers
-
+    
+    //...therefore, check for numbers by parsing (a technique used to analyze and interpret the syntax of a text or program to extract relevant information) the user input value. This method converts and returns an integer
     fizzValue = parseInt(fizzValue);
     buzzValue = parseInt(buzzValue);
 
 
-    //5. validate that "fizzValue" and "buzzValue" are actually Numbers.
-    
+    // Validate that the values in the variables fizzValue and buzzValue are both integers (not decimals, strings or other Non-number values)
     if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
 
-        //Call LOGIC function, set it in a new variable
-
+        // Call the LOGIC function, and assign it to a new variable
         let fbArray = fizzBuzz(fizzValue, buzzValue);
-
-        //Call DISPLAY function, set 
-
+        //Call DISPLAY function
         displayData(fbArray);
-
-        // OR display alert
+        // OR display an error message
     } else {
 
         alert("Error: You must enter integers between 1 and 100");
@@ -40,14 +33,11 @@ function getValues() {
 
 function fizzBuzz(fizzValue, buzzValue) {
     
-    //initialize the returnArragy
-
+    // Initialize the array that will hold the value of the iterator after each loop
     let returnArray = [];
     
 
-    //loop numbers from 1 to 100
-    //push the value of each true condition to the returnArray
-
+    // Test each number to determine if it meets the conditions for "FizzBuzz", "Fizz", or "Buzz", and add the values to the array
     for (let i = 1; i <=100; i++) {
 
         if (i % fizzValue == 0 && i % buzzValue == 0) {
@@ -76,28 +66,26 @@ function fizzBuzz(fizzValue, buzzValue) {
 
 }
 
-//DISPLAY function
+/***** DISPLAY function *****/
 
-//loop over the array and create a tablerow for each item.
+// Create a table to display the results of the fizzBuzz function
 function displayData(fbArray) {
 
-   //get the table body element from the page
+   // Get the table body element from the page
    let tableBody = document.getElementById("results");
 
-   //get the template element from the page
+   // Get the template element from the page
    let templateRow = document.getElementById("fbTemplate");
 
-   //Clear the table first
+   // Clear the table first
    tableBody.innerHTML = "";
 
    for (let index = 0; index < fbArray.length; index += 5) {
-    
 
-    //make a copy/fragment of the template row with importNode
+    // Make a copy/fragment of the template row with importNode
     let tableRow = document.importNode(templateRow.content, true);
-  
 
-    //get just the td and put them into an array to check its lenght
+    // Get just the td and put them into an array to check its length
     let rowCols = tableRow.querySelectorAll("td");
 
     rowCols[0].classList.add(fbArray[index]);
