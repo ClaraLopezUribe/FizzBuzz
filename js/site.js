@@ -8,7 +8,7 @@ function getValues() {
     let buzzValue = document.getElementById("buzzValue").value;
 
    
-    
+   
     //...therefore, check for numbers by parsing (a technique used to analyze and interpret the syntax of a text or program to extract relevant information) the user input value. This method converts and returns an integer
     fizzValue = parseInt(fizzValue);
     buzzValue = parseInt(buzzValue);
