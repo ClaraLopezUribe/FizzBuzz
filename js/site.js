@@ -13,7 +13,6 @@ function getValues() {
     fizzValue = parseInt(fizzValue);
     buzzValue = parseInt(buzzValue);
 
-
     // Validate that the values in the variables fizzValue and buzzValue are both integers (not decimals, strings or other Non-number values)
     if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
 
@@ -36,7 +35,6 @@ function fizzBuzz(fizzValue, buzzValue) {
     // Initialize the array that will hold the value of the iterator after each loop
     let returnArray = [];
     
-
     // Test each number to determine if it meets the conditions for "FizzBuzz", "Fizz", or "Buzz", and add the values to the array
     for (let i = 1; i <=100; i++) {
 
